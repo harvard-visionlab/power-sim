@@ -1,2 +1,3 @@
 # power-sim
- implementation of power-analysis using simulation methods
+
+implementation of power-analysis using simulation methods
