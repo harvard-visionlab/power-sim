@@ -166,5 +166,7 @@ power_results.num_trials = num_trials; %number of trials for each design
 power_results.sub_vector = sample_size(1,:);
 power_results.trial_vector = trial_vector;
 power_results.excluded_subs_avg = excluded_subs;
+power_results.subs_by_cond = subs_by_cond;  %subs in each cond for each design
+
 
 end

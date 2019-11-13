@@ -119,6 +119,7 @@ for trial_count= 1:length(trial_vector)
         end
         
         sample_size(trial_count, sub_count) = sum(nSubs);
+        subs_by_cond{trial_count, sub_count} = repelem(nSubs, prefs.f2_num_levels);
         
         % do condition comparisons
         %p = cell(1, nComps);
@@ -207,6 +208,7 @@ power_results.num_trials = num_trials; %number of trials for each design
 %power_results.dz_vect = dz_vect; %effect size vector for each design
 power_results.sub_vector = sample_size(1,:);
 power_results.trial_vector = trial_vector;
+power_results.subs_by_cond = subs_by_cond;
 
 end
 

@@ -145,7 +145,7 @@ power_results.n = sample_size; %sample size for each simulated design
 power_results.requested_n = requested_sample_size; %requested sample size for each simulated design
 power_results.num_trials = num_trials; %number of trials for each design
 %power_results.dz_vect = dz_vect; %effect size vector for each design
-power_results.sub_by_cond = subs_by_cond;  %subs in each cond for each design
+power_results.subs_by_cond = subs_by_cond;  %subs in each cond for each design
 power_results.sub_vector = sample_size(1,:);
 power_results.trial_vector = trial_vector;
 

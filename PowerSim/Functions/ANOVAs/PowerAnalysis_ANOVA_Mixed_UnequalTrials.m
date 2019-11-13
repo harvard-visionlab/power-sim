@@ -135,6 +135,7 @@ for trial_count= 1:length(trial_vector)
         end
         
         sample_size(trial_count, sub_count) = sum(nSubs);
+        subs_by_cond{trial_count, sub_count} = repelem(nSubs, prefs.f2_num_levels);
         requested_sample_size(trial_count, sub_count) = nSubs_Total;
         
         % do condition comparisons
@@ -220,5 +221,6 @@ power_results.num_trials = num_trials; %number of trials for each design
 power_results.sub_vector = sample_size(1,:);
 power_results.trial_vector = trial_vector;
 power_results.excluded_subs_avg = excluded_subs;
+power_results.subs_by_cond = subs_by_cond;
 
 end

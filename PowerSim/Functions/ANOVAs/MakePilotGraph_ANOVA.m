@@ -48,6 +48,7 @@ for f1 = 1:length(prefs.f1_names)
 end
 
 figure(1)
+clf
 
 clf
 hold on
@@ -161,6 +162,24 @@ for p = 1:size(prefs.comps, 1)
     end
     
     txt = [num2str(count), ': ', num2str(prefs.comps(p, 1)), ' > ', num2str(prefs.comps(p, 2)), extra_text];
+    text(.2, spot, txt, 'FontSize', 16);
+end
+
+%exlcusion critera
+if prefs.exclusion_min > -inf || prefs.exclusion_max < inf
+ spot = spot - spot_jump;
+ text(.1, spot, 'Exclusion Criteria:', 'FontSize', 16);
+end
+
+if prefs.exclusion_min > -inf
+    spot = spot - spot_jump;
+    txt = ['Replace subjects with overall score ', '\leq ', num2str(prefs.exclusion_min)];
+    text(.2, spot, txt, 'FontSize', 16);
+end
+
+if prefs.exclusion_max < inf
+    spot = spot - spot_jump;
+    txt = ['Replace subjects with overall score ', '\geq ', num2str(prefs.exclusion_max)];
     text(.2, spot, txt, 'FontSize', 16);
 end
 
