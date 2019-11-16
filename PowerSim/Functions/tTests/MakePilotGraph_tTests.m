@@ -2,12 +2,23 @@ function MakePilotGraph_tTests(prefs)
 %condition number labels
 bar_color = [.75,.75,.75];
 
+subs = unique(prefs.data(:,1));
+nPilotSubs = length(subs); %how many subjects in actual data
 conds = unique(prefs.data(:,3));
 nConds = length(conds);
 
-for c = 1:nConds
-    condition_means(c) = mean(prefs.data(prefs.data(:,3) == c, 2));
+%set up data (mean scores, nSubs * nConds)
+pilot_data = nan(nPilotSubs, nConds);
+ 
+for s = 1:nPilotSubs
+    for c = 1:nConds
+        pilot_data(s, c) = mean(prefs.data(prefs.data(:,1) == subs(s) & ...
+            prefs.data(:,3) == c,2));
+    end
 end
+condition_means = nanmean(pilot_data);
+
+
 
 figure(1)
 clf
