@@ -1,7 +1,6 @@
 function power_results = PowerAnalysis_ANOVA_Within_Fast(prefs)
 
 %simulation info
-keyboard
 nSims = prefs.nSims; %number of experiments to simulate
 nPilotSubs = length(unique(prefs.data(:,1))); %how many subjects in actual data
 sub_vector = prefs.N_range; %number of subs per simulation
